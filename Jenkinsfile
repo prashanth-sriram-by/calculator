@@ -11,5 +11,10 @@ stage("UnitTests") {
         sh "./gradlew test"
     }
 }
+stage("CodeCoverage") {
+    steps {
+        sh "./gradlew test jacocoTestCoverageVerification"
+    }
+}
 }
 }
