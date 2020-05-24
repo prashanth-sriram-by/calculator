@@ -1,7 +1,5 @@
 pipeline {
-agent {
-          label 'docker'
-        }
+agent any
 triggers {
     pollSCM('15 * * * *')
 }
@@ -37,7 +35,7 @@ stage("Package") {
     steps {
         sh "./gradlew build"
     }}
-stage("Docker build") {
+/* stage("Docker build") {
     steps {
         sh "docker build -t prashanth-sriram-by/calculator ."
     }}
@@ -46,6 +44,6 @@ stage("Docker push") {
     steps {
         sh "docker push leszko/calculator"
     }
-}
+} */
 }
 }
