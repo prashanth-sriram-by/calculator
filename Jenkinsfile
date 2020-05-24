@@ -36,10 +36,5 @@ stage("Static code analysis") {
     }
 }
 }
-post {
-    always {
-    mail to: 'prashanthsriram145@gmail.com',
-    subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
-    body: "Your build completed, please check: ${env.BUILD_URL}"
-}}
+
 }
