@@ -39,7 +39,6 @@ stage("Docker build") {
     steps {
         sh "docker build -t prashanth-sriram-by/calculator ."
     }}
-}
 
 stage("Docker push") {
     steps {
