@@ -31,6 +31,20 @@ stage("Static code analysis") {
         sh "./gradlew checkstyleMain"
     }
 }
+stage: stage("Package") {
+    steps {
+        sh "./gradlew build"
+    }}
+stage("Docker build") {
+    steps {
+        sh "docker build -t prashanth-sriram-by/calculator ."
+    }}
+}
+
+stage("Docker push") {
+    steps {
+        sh "docker push leszko/calculator"
+    }
 }
 
 }
