@@ -3,6 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'jacoco'
+	id 'checkstyle'
 }
 
 group = 'com.sriram'
@@ -11,6 +12,11 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+}
+
+checkstyle {
+	toolVersion "8.8"
+	configFile file("config/checkstyle/checkstyle.xml")
 }
 
 dependencies {
